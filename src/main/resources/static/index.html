@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Bootstrap 101 Template</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+</head>
+<body ng-app="myapp">
+
+	<div id="main" class="container">
+		<div id="menu" class="row">This is menu bar</div>
+
+		<div id="body" class="row" ng-controller="bodyController">
+			<div id="data" class="col-md-8">
+				<table class="table">
+					<tr>
+						<th>Title</th>
+						<th>Pay</th>
+						<th>Duration</th>
+					</tr>
+					<tr ng-repeat="j in jobs">
+						<td>{{j.title}}</td>
+						<td>{{j.pay}}</td>
+						<td>{{j.duration}}</td>
+					</tr>
+				</table>
+				<input value="click" type="button" ng-click="myfunction()" /> <input class="btn-warning" type="button" ng-click="getJobService()"
+					value="Get data from server" />
+			</div>
+
+			<div class="row">
+			<div class="col-md-8">
+				<form>
+					<div class="form-group">
+						<label for="jobtitle">Job Title:</label> <input type="text" ng-model="newjob.title" class="form-control" id="jobtitle"
+							placeholder="Title">
+					</div>
+					<div class="form-group">
+						<label for="jobpay">Pay:</label> <input type="text" class="form-control" id="jobpay"  ng-model="newjob.pay"
+							placeholder="Eg:1000">
+					</div>
+					<div class="form-group">
+						<label for="jobduration">Duration:</label> <input type="text" class="form-control" id="jobduration"  ng-model="newjob.duration"
+							placeholder="in hours">
+					</div>
+					<button type="submit" class="btn btn-default" ng-click="createnewjob()">Submit</button>
+				</form>
+				</div>
+
+			</div>
+
+
+			<div id="adv" class="col-md-4">This is adv</div>
+		</div>
+		<div id="footer" class="row">This is footer</div>
+
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="js/myapp.js"></script>
+</body>
+</html>
