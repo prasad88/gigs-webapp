@@ -1,0 +1,48 @@
+<html>
+<head></head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+
+var app = angular.module("TrueValue",[]);
+app.controller("TrueController", mainFunction);
+
+function mainFunction(){
+  this.showBuy = false;
+  this.showSell = false;
+  this.showExchange = false;
+
+
+  this.buyClicked = function(){
+    this.showBuy = true;
+};
+
+this.sellClicked = function(){
+  this.showSell = true;
+};
+
+this.exchangeClicked = function(){
+  this.showExchange = true;
+};
+};
+
+</script>
+<div ng-app="TrueValue">
+
+
+  <div ng-controller="TrueController as ctrl">
+
+    <button ng-click="ctrl.buyClicked()">Buy</button>
+    <button ng-click="ctrl.sellClicked()">Sell</button>
+    <button ng-click="ctrl.exchangeClicked()">Exchange</button>
+     <p ng-show = "ctrl.showBuy">This is how to buy <p>
+     <p ng-show = "ctrl.showSell">This is how to buy <p>
+     <p ng-show = "ctrl.showExchange">This is how to buy <p>
+  </div>
+<marquee><p>Over 120 Quality checks!</p><p>Best deals on new cars!</p><p>Best price for your car, Transparent Evaluation!</p></marquee>
+<marquee>Best deals on new cars!</marquee>
+<marquee>Best price for your car, Transparent Evaluation!</marquee>
+
+</div>
+</body>
+</html>
