@@ -1,0 +1,28 @@
+<html ng-app="TodoApp">
+
+<head>
+<script src="angular.js"></script>
+<script src="app.js"></script>
+
+</head>
+<body>
+
+<div ng-controller="TodoController as ctrl">
+<h1>Todo App</h1>
+<input ng-model="ctrl.task"type="text"></input><button ng-click="ctrl.addTask()">Add</button>
+<p>Your options</p>
+<button ng-if="ctrl.editshow" ng-click="ctrl.editClick()">Edit</button>
+<button ng-if="!ctrl.editshow" ng-click="ctrl.editClick()">Done</button>
+
+<h2>Your Tasks</h2>
+<ol>
+<li ng-repeat="t in ctrl.tasks"><span ng-show="ctrl.editshow" ng-bind="t"></span><input ng-hide="ctrl.editshow" type="text" ng-model="t"></input></li>
+</ol>
+<p>you are typing: {{ctrl.task}}</p>
+
+</div>
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html ng-app="myApp">
+
+<head>
+<script src="angular.js"></script>
+</head>
+<body>
+
+<div ng-controller="MainController">
+<h1>Hello Angular JS</h1>
+<p ng-if="hourOfTheDay < 12">Good morming</p>
+<p ng-if="hourOfTheDay > 12">Good Evening</p>
+<p>The hour of the day is:{{hourOfTheDay}}</p>
+</div>
+
+
+<script>
+
+	var module = angular.module("myApp",[]);
+	module.controller("MainController", Main);
+	
+	function Main($scope){
+		$scope.hourOfTheDay = 8;
+		console.log("Main called!");
+	};
+
+</script>
+</body>
+</html>
